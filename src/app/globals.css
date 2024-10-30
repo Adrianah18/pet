@@ -1,42 +1,52 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* styles/global.css */
+
+/* ====== Navbar Estilizado ====== */
+
+/* Define o fundo escuro da Navbar e uma borda inferior para separação */
+.navbar {
+  width: 100vw; /* Usa 100% da largura da tela */
+  margin-left: calc(50% - 50vw); /* Remove margens laterais */
+  background-color: #097ea1; /* Cor de fundo da barra de navegação */
+  margin-top: -9px;
+  height: 80px;
+}
+/* Estilo do nome/marca (Navbar.Brand) na Navbar */
+.navbar-brand {
+  color: #a31818 !important; /* Define o texto branco da marca */
+  font-weight: bold; /* Deixa o texto em negrito */
+  font-size: 1.5rem; /* Tamanho maior para destacar a marca */
+  padding-right: 1rem; /* Espaçamento à direita */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Estilo para os links do menu dentro da Navbar */
+.navbar-nav .nav-link {
+  color: #bbb !important; /* Cor inicial dos links */
+  font-size: 1.1rem; /* Aumenta o tamanho da fonte dos links */
+  margin-right: 1rem; /* Espaçamento entre os links */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Suaviza as mudanças de cor */
+  padding: 0.5rem 1rem; /* Espaçamento interno para parecer um botão */
+  border-radius: 5px; /* Bordas arredondadas nos links */
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Efeito ao passar o mouse sobre os links do menu */
+.navbar-nav .nav-link:hover {
+  color: #fff !important; /* Texto branco no hover */
+  background-color: #555; /* Fundo escuro no hover para destacar */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Estilo do botão de "hambúrguer" (Navbar.Toggle) no mobile */
+.navbar-toggler {
+  border: none; /* Remove a borda do botão */
+  background-color: #333; /* Fundo escuro para o botão de mobile */
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Remove o contorno azul ao focar no botão de mobile */
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Alinha o conteúdo da Navbar à direita ao expandir */
+.navbar-collapse {
+  justify-content: flex-end; /* Alinha o menu à direita */
 }
