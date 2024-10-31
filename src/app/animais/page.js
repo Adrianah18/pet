@@ -11,7 +11,6 @@ export default function Page() {
       <Cabecalho titulo="Clientes" subtitulo="Página de clientes usando o cabeçalho" />
 
       <Link href="/">Página Inicial</Link><br />
-      <Link href="/fundamentos">Fundamentos</Link><br />
 
       <div className="table-container">
         <Table striped bordered hover>

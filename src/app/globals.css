@@ -6,13 +6,13 @@
 .navbar {
   width: 100vw; /* Usa 100% da largura da tela */
   margin-left: calc(50% - 50vw); /* Remove margens laterais */
-  background-color: #097ea1; /* Cor de fundo da barra de navegação */
+  background-color: #daf8e9; /* Cor de fundo da barra de navegação */
   margin-top: -9px;
-  height: 80px;
+  height: 100px;
 }
 /* Estilo do nome/marca (Navbar.Brand) na Navbar */
 .navbar-brand {
-  color: #a31818 !important; /* Define o texto branco da marca */
+  color: #e73636 !important; /* Define o texto branco da marca */
   font-weight: bold; /* Deixa o texto em negrito */
   font-size: 1.5rem; /* Tamanho maior para destacar a marca */
   padding-right: 1rem; /* Espaçamento à direita */
@@ -49,4 +49,19 @@
 /* Alinha o conteúdo da Navbar à direita ao expandir */
 .navbar-collapse {
   justify-content: flex-end; /* Alinha o menu à direita */
+}
+
+
+
+.logo {
+  border-radius: 50%;         /* Exemplo: deixa a logo redonda */
+  border: 2px solid #007bff;  /* Exemplo: adiciona uma borda */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Exemplo: sombra */
+  width: 150px;               /* Ajuste o tamanho */
+  height: auto;               /* Mantém a proporção da imagem */
+  transition: transform 0.3s; /* Efeito de transição para hover */
+}
+
+.logo:hover {
+  transform: scale(1.1);      /* Aumenta a logo ao passar o mouse */
 }
