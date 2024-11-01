@@ -1,67 +1,384 @@
-/* styles/global.css */
+body {
+  background-color: #daf8e9; /* Cor de fundo */
+  color: #333; /* Cor do texto principal */
+  font-family: Arial, sans-serif; /* Fonte do texto */
+}
 
-/* ====== Navbar Estilizado ====== */
-
-/* Define o fundo escuro da Navbar e uma borda inferior para separação */
+/* Estilos para a navbar */
 .navbar {
-  width: 100vw; /* Usa 100% da largura da tela */
-  margin-left: calc(50% - 50vw); /* Remove margens laterais */
-  background-color: #daf8e9; /* Cor de fundo da barra de navegação */
-  margin-top: -9px;
-  height: 100px;
-}
-/* Estilo do nome/marca (Navbar.Brand) na Navbar */
-.navbar-brand {
-  color: #e73636 !important; /* Define o texto branco da marca */
-  font-weight: bold; /* Deixa o texto em negrito */
-  font-size: 1.5rem; /* Tamanho maior para destacar a marca */
-  padding-right: 1rem; /* Espaçamento à direita */
+  width: 100%;
+  background-color: #346d51; /* Cor da navbar */
+  padding: 20px;
+  height: 90px;
 }
 
-/* Estilo para os links do menu dentro da Navbar */
-.navbar-nav .nav-link {
-  color: #bbb !important; /* Cor inicial dos links */
-  font-size: 1.1rem; /* Aumenta o tamanho da fonte dos links */
-  margin-right: 1rem; /* Espaçamento entre os links */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Suaviza as mudanças de cor */
-  padding: 0.5rem 1rem; /* Espaçamento interno para parecer um botão */
-  border-radius: 5px; /* Bordas arredondadas nos links */
-}
-
-/* Efeito ao passar o mouse sobre os links do menu */
-.navbar-nav .nav-link:hover {
-  color: #fff !important; /* Texto branco no hover */
-  background-color: #555; /* Fundo escuro no hover para destacar */
-}
-
-/* Estilo do botão de "hambúrguer" (Navbar.Toggle) no mobile */
-.navbar-toggler {
-  border: none; /* Remove a borda do botão */
-  background-color: #333; /* Fundo escuro para o botão de mobile */
-}
-
-/* Remove o contorno azul ao focar no botão de mobile */
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* Alinha o conteúdo da Navbar à direita ao expandir */
-.navbar-collapse {
-  justify-content: flex-end; /* Alinha o menu à direita */
-}
-
-
-
+/* Estilo da logo na navbar */
 .logo {
-  border-radius: 50%;         /* Exemplo: deixa a logo redonda */
-  border: 2px solid #007bff;  /* Exemplo: adiciona uma borda */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Exemplo: sombra */
-  width: 150px;               /* Ajuste o tamanho */
-  height: auto;               /* Mantém a proporção da imagem */
-  transition: transform 0.3s; /* Efeito de transição para hover */
+  border-radius: 50%;
+  border: 2px solid #3b5e38f1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 140px;
+  height: 140px;
+  transition: transform 0.3s;
+  margin-top: -40px;
 }
 
 .logo:hover {
-  transform: scale(1.1);      /* Aumenta a logo ao passar o mouse */
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px; /* Ajuste para centralizar */
+}
+
+.navbar-nav .nav-link {
+  font-family: Arial, sans-serif; /* Fonte dos links */
+  color: #daf8e9 !important; /* Cor dos links */
+  font-size: 1.5rem; /* Tamanho da fonte dos links */
+  text-decoration: none !important; /* Sem sublinhado */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Efeito de transição */
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important; /* Cor ao passar o mouse */
+  background-color: #346d51; /* Fundo ao passar o mouse */
+}
+
+/* Estilos para o banner */
+.banner {
+  width: 100%;
+  max-width: 1500px;
+  height: 350px;
+  object-fit: cover;
+  margin: 50px auto;
+  display: block;
+}
+
+/* Título "Por que adotar?" */
+h2 {
+  text-align: left;
+  margin-left: 80px; /* Margem esquerda */
+  margin-top: 30px; /* Margem superior */
+  color: #346d51; /* Cor do título */
+  font-size: 2rem; /* Tamanho do título */
+}
+
+/* Estilos para o card */
+.card {
+  width: 350px;
+  height: 450px;
+  margin: 15px; /* Margem entre os cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #3b5e38f1; /* Borda dos cards */
+  border-radius: 10px; /* Bordas arredondadas */
+  transition: transform 0.3s; /* Transição ao passar o mouse */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+.card-title {
+  font-weight: bold; /* Negrito */
+  color: #0f472d; /* Cor do título do card */
+  font-size: 1.25rem; /* Tamanho da fonte do título */
+  margin: 10px 0; /* Margem superior e inferior */
+  text-align: left;
+  margin-left: 5px; /* Margem esquerda */
+}
+
+.card-text {
+  color: #000913; /* Cor do texto */
+  flex-grow: 1; /* Crescimento do texto */
+}
+
+.container {
+  padding: 20px; /* Padding do container */
+}
+
+.card img {
+  width: 70%; /* Largura da imagem */
+  object-fit: cover; /* Cobrir o espaço */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Quebra de linha */
+  justify-content: center; /* Centralizar */
+}
+
+/* Estilos para a Tabela */
+.table {
+  margin: 20px 0; /* Margem superior e inferior */
+  width: 100%; /* Largura total */
+  background-color: #ffffff; /* Cor de fundo */
+  border-collapse: separate; /* Separar bordas */
+  border-spacing: 0; /* Espaçamento entre as bordas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para a tabela */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Ocultar bordas */
+}
+
+.table thead th {
+  background-color: #346d51; /* Cor do cabeçalho */
+  color: #ffffff; /* Cor do texto do cabeçalho */
+  padding: 12px; /* Padding do cabeçalho */
+  font-weight: bold; /* Negrito */
+  text-align: center; /* Centralizar */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+.table tbody td {
+  padding: 10px; /* Padding das células */
+  text-align: center; /* Centralizar */
+  color: #333; /* Cor do texto */
+  font-size: 0.95rem; /* Tamanho da fonte */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Cor de fundo alternada */
+}
+
+.table tbody tr:hover {
+  background-color: #daf8e9; /* Efeito de hover para as linhas */
+}
+
+.table td:first-child, .table th:first-child {
+  padding-left: 15px; /* Padding da primeira célula */
+}
+
+.table-icon {
+  cursor: pointer; /* Mão ao passar o mouse */
+  font-size: 1.2rem; /* Tamanho do ícone */
+  margin: 0 8px; /* Margem lateral */
+  transition: transform 0.2s; /* Efeito de transição */
+}
+
+.table-icon:hover {
+  transform: scale(1.1); /* Efeito de zoom no ícone */
+}
+
+.text-primary {
+  color: #346d51 !important; /* Verde escuro para o ícone de edição */
+}
+
+.text-danger {
+  color: #d9534f !important; /* Vermelho para o ícone de exclusão */
+}
+
+img {
+  border-radius: 5px; /* Bordas arredondadas para imagens */
+  transition: transform 0.3s; /* Efeito de transição */
+}
+
+img:hover {
+  transform: scale(1.05); /* Zoom ao passar o mouse sobre a imagem */
+}
+
+/* Estilo geral do container do formulário */
+.form-container {
+  max-width: 600px; /* Largura máxima */
+  margin: 30px auto; /* Margem superior e inferior */
+  padding: 30px; /* Padding do container */
+  background-color: #f5f5f5; /* Cor de fundo do formulário */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Título do formulário */
+.form-container h1 {
+  text-align: center; /* Centralizar */
+  color: #346d51; /* Cor do título */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilo dos labels */
+.form-container label {
+  font-weight: bold; /* Negrito */
+  color: #3b5e38f1; /* Cor dos labels */
+  font-size: 1rem; /* Tamanho da fonte */
+  display: block; /* Faz os labels ocuparem a largura total */
+  margin-bottom: 5px; /* Margem inferior para espaçamento com os campos */
+}
+
+/* Campos do formulário */
+.form-container .form-control {
+  font-size: 1rem; /* Tamanho da fonte */
+  width: 100%; /* Largura total */
+  padding: 12px; /* Padding */
+  margin-bottom: 15px; /* Margem inferior */
+  border: 1px solid #ddd; /* Borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  transition: border-color 0.3s; /* Transição para a cor da borda */
+}
+
+/* Estilo do select para manter a formatação igual aos campos de entrada */
+.form-container .custom-select {
+  font-size: 1rem; /* Tamanho da fonte */
+  width: 100%; /* Largura total do container */
+  padding: 12px; /* Padding do select */
+  margin-bottom: 15px; /* Margem inferior */
+  border: 1px solid #ddd; /* Borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-sizing: border-box; /* Inclui padding e borda na largura/altura */
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  transition: border-color 0.3s; /* Transição para a cor da borda */
+}
+
+/* Botões */
+.form-container .btn-success,
+.form-container .btn-danger {
+  width: 100%; /* Largura total para os botões */
+  padding: 12px; /* Padding do botão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Mão ao passar o mouse */
+  transition: background-color 0.2s, transform 0.2s; /* Transições */
+  margin-top: 10px; /* Margem superior para espaçamento */
+}
+
+/* Botão de sucesso */
+.form-container .btn-success {
+  background-color: #346d51; /* Cor do botão de sucesso */
+  border: none; /* Sem borda */
+  color: white; /* Cor do texto */
+  width: 100px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+/* Efeito de hover do botão de sucesso */
+.form-container .btn-success:hover {
+  background-color: #2b5e4a; /* Cor do botão ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+/* Botão de perigo */
+.form-container .btn-danger {
+  background-color: #feb402; /* Cor do botão de perigo */
+  border: none; /* Sem borda */
+  color: white; /* Cor do texto */
+  width: 100px;
+  text-decoration: none;
+}
+
+/* Efeito de hover do botão de perigo */
+.form-container .btn-danger:hover {
+  background-color: #c9302c; /* Cor do botão de perigo ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+/* Estilo para campos de entrada com erro */
+.is-invalid {
+  border-color: #dc3545 !important; /* Cor da borda quando inválido */
+}
+
+/* Sombra ao focar em campos inválidos */
+.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Sombra vermelha ao focar */
+}
+
+/* Estilo para mensagens de erro */
+.text-danger {
+  color: #dc3545; /* Cor vermelha para mensagens de erro */
+  font-size: 0.575rem; /* Tamanho da fonte para mensagens de erro */
+  margin-top: -5px; /* Margem superior negativa para aproximar da entrada */
+}
+
+/* Estilo para o grupo de status de adoção */
+.form-group-status {
+  margin-bottom: 20px; /* Margem inferior para separar do próximo campo */
+  margin-top: 15px; /* Margem superior para separar do campo anterior */
+}
+
+/* Estilo para cada radio button */
+.form-group-status .form-check {
+  display: inline-block; /* Exibe os radio buttons lado a lado */
+  margin-right: 15px; /* Margem entre os radio buttons */
+}
+
+/* Alinhamento vertical para o label */
+.form-group-status label {
+  margin-left: 5px; /* Margem para separar o label do input */
+}
+
+
+/* Contêiner dos cards de animais */
+.animal-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.animal-card {
+  width: 280px;
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  overflow: hidden; /* Para bordas arredondadas */
+  transition: transform 0.3s, box-shadow 0.3s; /* Suavização ao passar o mouse */
+}
+
+.animal-card:hover {
+  transform: scale(1.05); /* Leve aumento no hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais profunda no hover */
+}
+
+.animal-card-img {
+  width: 100%;
+  height: 180px; /* Altura da imagem */
+  object-fit: cover; /* Imagem cobre o espaço */
+  border-top-left-radius: 15px; /* Arredondamento das bordas superiores */
+  border-top-right-radius: 15px;
+}
+
+.animal-card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animal-card-title {
+  font-size: 1.25rem; /* Tamanho do título */
+  font-weight: bold;
+  color: #346d51; /* Verde escuro */
+  text-align: center;
+  margin: 0; /* Remover margens do título */
+}
+
+.animal-card-text {
+  color: #555; /* Cinza escuro */
+  font-size: 0.9rem; /* Tamanho do texto */
+  line-height: 1.4; /* Altura da linha */
+  margin: 0;
+}
+
+.animal-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #eee; /* Linha divisória */
+  margin-top: 10px;
+}
+
+.animal-card-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.animal-card-icon:hover {
+  transform: scale(1.1); /* Zoom no hover */
 }
