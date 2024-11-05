@@ -1,39 +1,46 @@
-// src/app/components/Pagina.js
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import Image from "next/image";
 
-export default function Pagina({ titulo, children }) {
-  return (
-    <>
-      <Navbar className="navbar" variant="dark" expand="lg">
-        <Container>
-          <Link href="/" passHref>
-            <Navbar.Brand>
-              <Image src="/imagens/logo.png" alt="Logo pet" width={250} height={250} className="logo" />
-            </Navbar.Brand>
-          </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link href="/" legacyBehavior>
-                <Nav.Link className="nav-link">Home</Nav.Link>
-              </Link>
-              <Link href="/sobre" legacyBehavior>
-                <Nav.Link className="nav-link">Sobre</Nav.Link>
-              </Link>
-              <Link href="/contato" legacyBehavior>
-                <Nav.Link className="nav-link">Contato</Nav.Link>
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <div>
-        <h1>{titulo}</h1>
-        <div>{children}</div> {/* Isso agora renderiza o conteúdo passado */}
-      </div>
-    </>
-  );
+export default function Pagina(props) {
+    return (
+        <>
+            <Navbar className="navbar" variant="dark" expand="lg">
+                <Container>
+                    <Link href="/home" passHref>
+                        <Navbar.Brand>
+                            <Image src="/imagens/logo.png" alt="Logo pet" width={500} height={500} className="logo" />
+                        </Navbar.Brand>
+                    </Link>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link className="nav-link" href="/home">Home</Nav.Link>
+                    </Nav>
+
+                    <Nav className="me-auto">
+                        <Nav.Link className="nav-link" href="/animais">Adote</Nav.Link>
+                    </Nav>
+                    <Nav className="me-auto">
+                        <Nav.Link className="nav-link" href="/voluntarios">Voluntarios</Nav.Link>
+                    </Nav>
+                    <Nav className="me-auto">
+                        <Nav.Link className="nav-link" href="/abrigos">Abrigos</Nav.Link>
+                    </Nav>
+                    <Nav className="me-auto">
+                        <Nav.Link className="nav-link" href="/adocoes">Adocoes</Nav.Link>
+                    </Nav>
+                    
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <div className="bg-secondary text-white text-center p-3">
+                <h1>{props.titulo}</h1>
+            </div>
+            <Container>
+                {props.children}
+            </Container>
+        </>
+
+    )
 }

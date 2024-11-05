@@ -3,17 +3,18 @@
 import Link from "next/link";
 import { Card, Image, Container, Row, Col } from "react-bootstrap";
 import Pagina from "../components/Pagina";
+import Footer from "../components/Footer";
 
 
 export default function Page() {
     return (
         <Pagina titulo="">
             {/* Banner */}
-            <Image class="banner"
+            <Image className="banner"
                 src="/imagens/banner.png" // Coloque o caminho da sua imagem aqui
                 alt="Banner de adoção de pets"
                 fluid
-                style={{ width: '90%', height: '400px'}} // Estilização para o banner ocupar 100% da largura
+                style={{ width: '100%', height: '500px'}} // Estilização para o banner ocupar 100% da largura
             />
 
             {/* Texto "Por que adotar?" */}
@@ -57,6 +58,7 @@ export default function Page() {
                     </Col>
                 </Row>
             </Container>
+                        <Footer />
         </Pagina>
     );
 }

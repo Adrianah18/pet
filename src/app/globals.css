@@ -17,8 +17,8 @@ body {
   border-radius: 50%;
   border: 2px solid #3b5e38f1;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   transition: transform 0.3s;
   margin-top: -40px;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-  font-family: Arial, sans-serif; /* Fonte dos links */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
   color: #daf8e9 !important; /* Cor dos links */
   font-size: 1.5rem; /* Tamanho da fonte dos links */
   text-decoration: none !important; /* Sem sublinhado */
@@ -61,15 +61,15 @@ body {
 /* Título "Por que adotar?" */
 h2 {
   text-align: left;
-  margin-left: 80px; /* Margem esquerda */
+  margin-left: 20px; /* Margem esquerda */
   margin-top: 30px; /* Margem superior */
   color: #346d51; /* Cor do título */
   font-size: 2rem; /* Tamanho do título */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
 }
-
 /* Estilos para o card */
 .card {
-  width: 350px;
+  width: 250px; /* Largura dos cards */
   height: 450px;
   margin: 15px; /* Margem entre os cards */
   display: flex;
@@ -77,27 +77,32 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid #3b5e38f1; /* Borda dos cards */
+  border: 1px solid #3b5e38; /* Borda dos cards */
   border-radius: 10px; /* Bordas arredondadas */
-  transition: transform 0.3s; /* Transição ao passar o mouse */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra do card */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transições ao passar o mouse */
+  background-color: #fff; /* Cor de fundo do card */
 }
 
 .card:hover {
   transform: scale(1.05); /* Efeito de zoom */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
 }
 
 .card-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
   font-weight: bold; /* Negrito */
   color: #0f472d; /* Cor do título do card */
   font-size: 1.25rem; /* Tamanho da fonte do título */
   margin: 10px 0; /* Margem superior e inferior */
-  text-align: left;
-  margin-left: 5px; /* Margem esquerda */
 }
 
 .card-text {
-  color: #000913; /* Cor do texto */
+  color: #000000; /* Cor do texto */
   flex-grow: 1; /* Crescimento do texto */
+  padding: 0 10px; /* Padding horizontal para o texto */
+  text-align: left;
 }
 
 .container {
@@ -105,8 +110,11 @@ h2 {
 }
 
 .card img {
-  width: 70%; /* Largura da imagem */
+  width: 100%; /* Largura da imagem */
+  height: 250px; /* Altura fixa para a imagem */
   object-fit: cover; /* Cobrir o espaço */
+  border-top-left-radius: 10px; /* Bordas arredondadas no topo */
+  border-top-right-radius: 10px; /* Bordas arredondadas no topo */
 }
 
 .row {
@@ -115,6 +123,9 @@ h2 {
   justify-content: center; /* Centralizar */
 }
 
+/* Responsividade */
+
+/* TABELASSSSSS */
 /* Estilos para a Tabela */
 .table {
   margin: 20px 0; /* Margem superior e inferior */
@@ -134,6 +145,8 @@ h2 {
   font-weight: bold; /* Negrito */
   text-align: center; /* Centralizar */
   font-size: 1rem; /* Tamanho da fonte */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
 }
 
 .table tbody td {
@@ -141,6 +154,8 @@ h2 {
   text-align: center; /* Centralizar */
   color: #333; /* Cor do texto */
   font-size: 0.95rem; /* Tamanho da fonte */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
 }
 
 .table tbody tr:nth-child(even) {
@@ -193,11 +208,15 @@ img:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
+/*  ////////////////////////////////         */
+
+/* Formulario de animais */
 /* Título do formulário */
-.form-container h1 {
+.form-container {
   text-align: center; /* Centralizar */
   color: #346d51; /* Cor do título */
-  font-size: 1.8rem; /* Tamanho da fonte */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
   margin-bottom: 20px; /* Margem inferior */
 }
 
@@ -206,12 +225,17 @@ img:hover {
   font-weight: bold; /* Negrito */
   color: #3b5e38f1; /* Cor dos labels */
   font-size: 1rem; /* Tamanho da fonte */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
   display: block; /* Faz os labels ocuparem a largura total */
   margin-bottom: 5px; /* Margem inferior para espaçamento com os campos */
+  text-align: left; /* Alinha o texto à esquerda */
+
 }
 
 /* Campos do formulário */
 .form-container .form-control {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
   font-size: 1rem; /* Tamanho da fonte */
   width: 100%; /* Largura total */
   padding: 12px; /* Padding */
@@ -224,6 +248,8 @@ img:hover {
 
 /* Estilo do select para manter a formatação igual aos campos de entrada */
 .form-container .custom-select {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
   font-size: 1rem; /* Tamanho da fonte */
   width: 100%; /* Largura total do container */
   padding: 12px; /* Padding do select */
@@ -246,36 +272,43 @@ img:hover {
   margin-top: 10px; /* Margem superior para espaçamento */
 }
 
+/* Botões de sucesso e perigo com estilo uniforme */
+.form-container .btn-success,
+.form-container .btn-danger {
+  font-size: 1rem; /* Tamanho da fonte */
+  padding: 10px 20px; /* Espaçamento interno padrão */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  border: none; /* Sem borda */
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Sem sublinhado */
+  width: auto; /* Evita largura total */
+  display: inline-block; /* Mantém o tamanho natural */
+  margin-right: 8px; /* Pequena margem lateral */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+}
+
 /* Botão de sucesso */
 .form-container .btn-success {
   background-color: #346d51; /* Cor do botão de sucesso */
-  border: none; /* Sem borda */
-  color: white; /* Cor do texto */
-  width: 100px;
-  text-decoration: none;
-  margin-right: 5px;
 }
 
 /* Efeito de hover do botão de sucesso */
 .form-container .btn-success:hover {
-  background-color: #2b5e4a; /* Cor do botão ao passar o mouse */
+  background-color: #2b5e4a; /* Cor ao passar o mouse */
   transform: scale(1.05); /* Efeito de zoom */
 }
 
 /* Botão de perigo */
 .form-container .btn-danger {
   background-color: #feb402; /* Cor do botão de perigo */
-  border: none; /* Sem borda */
-  color: white; /* Cor do texto */
-  width: 100px;
-  text-decoration: none;
 }
 
 /* Efeito de hover do botão de perigo */
 .form-container .btn-danger:hover {
-  background-color: #c9302c; /* Cor do botão de perigo ao passar o mouse */
+  background-color: #c9302c; /* Cor ao passar o mouse */
   transform: scale(1.05); /* Efeito de zoom */
 }
+
 
 /* Estilo para campos de entrada com erro */
 .is-invalid {
@@ -302,16 +335,19 @@ img:hover {
 
 /* Estilo para cada radio button */
 .form-group-status .form-check {
-  display: inline-block; /* Exibe os radio buttons lado a lado */
-  margin-right: 15px; /* Margem entre os radio buttons */
+  display: flex; /* Exibe os radio buttons lado a lado */
+  flex-direction: column; /* Organiza os itens verticalmente */
+  gap: 10px; /* Espaçamento entre cada opção */
 }
 
 /* Alinhamento vertical para o label */
 .form-group-status label {
   margin-left: 5px; /* Margem para separar o label do input */
+  display: flex;
+  align-items: center;
 }
 
-
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Contêiner dos cards de animais */
 .animal-card-container {
   display: flex;
@@ -351,6 +387,8 @@ img:hover {
 }
 
 .animal-card-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
   font-size: 1.25rem; /* Tamanho do título */
   font-weight: bold;
   color: #346d51; /* Verde escuro */
@@ -359,6 +397,8 @@ img:hover {
 }
 
 .animal-card-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
   color: #555; /* Cinza escuro */
   font-size: 0.9rem; /* Tamanho do texto */
   line-height: 1.4; /* Altura da linha */
@@ -382,3 +422,375 @@ img:hover {
 .animal-card-icon:hover {
   transform: scale(1.1); /* Zoom no hover */
 }
+
+/* PESQUISA de abrigos */
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px; /* Largura máxima do campo */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  font-size: 1rem; /* Tamanho da fonte */
+  width: 100%; /* Largura total */
+  padding: 12px; /* Padding */
+  border: 1px solid #ddd; /* Borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  transition: border-color 0.3s; 
+}
+
+.search-button {
+  width: 100%;
+  background-color: #0f472d;
+  max-width: 400px; /* Largura máxima do botão */
+  margin-top: 10px; /* Espaçamento entre o campo e o botão */
+  background-color: #feb402; /* Cor do botão de perigo */
+  border-radius: 10px; /* Bordas arredondadas */
+  color: white; /* Cor do texto */
+  padding: 12px; /* Padding */
+  border: none;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Contêiner dos cards de abrigos */
+.shelter-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.shelter-card {
+  width: 280px;
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shelter-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.shelter-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.shelter-card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shelter-card-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #346d51;
+  text-align: center;
+  margin: 0;
+}
+
+.shelter-card-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  color: #000000;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.shelter-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.shelter-card-location-btn {
+  background-color: #feb402;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  transition: background-color 0.3s;
+}
+
+.shelter-card-location-btn:hover {
+  background-color: #2b5e4a;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Contêiner dos cartões de interessados */
+.interessado-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo dos cartões de interessados */
+.interessado-card {
+  width: 350px; /* Largura dos cartões */
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  overflow: hidden; /* Para esconder conteúdo que extrapola o cartão */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animações ao passar o mouse */
+}
+
+.interessado-card:hover {
+  transform: scale(1.05); /* Efeito de aumento */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+}
+
+/* Estilo do título do cartão */
+.interessado-card-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  font-size: 1.25rem; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: #346d51; /* Cor do texto */
+  text-align: center; /* Centralizar texto */
+  margin: 0; /* Sem margem */
+}
+
+/* Estilo do texto do cartão */
+.interessado-card-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  color: #000000; /* Cor do texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  line-height: 1.4; /* Altura da linha */
+  margin: 0; /* Sem margem */
+  padding: 15px; /* Padding ao redor do texto */
+}
+
+/* Contêiner das ações do cartão */
+.interessado-card-actions {
+  display: flex; /* Flexbox para layout das ações */
+  justify-content: space-between; /* Espaçar ações */
+  align-items: center; /* Alinhar itens verticalmente */
+  padding: 10px; /* Padding interno */
+  border-top: 1px solid #eee; /* Borda superior */
+  margin-top: 10px; /* Margem superior */
+}
+.interessado-card-icon {
+  font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Contêiner dos cartões de voluntários */
+
+
+.voluntario-card-img {
+  width: 100%; /* Ocupa toda a largura do cartão */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Cobre o espaço do cartão, mantendo a proporção */
+  border-top-left-radius: 15px; /* Bordas arredondadas no canto superior esquerdo */
+  border-top-right-radius: 15px; /* Bordas arredondadas no canto superior direito */
+}
+.voluntario-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os cartões */
+  padding: 20px; /* Espaçamento interno do contêiner */
+}
+
+/* Estilo dos cartões de voluntários */
+.voluntario-card {
+  width: 350px; /* Largura dos cartões */
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  overflow: hidden; /* Para esconder conteúdo que extrapola o cartão */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animações ao passar o mouse */
+}
+
+.voluntario-card:hover {
+  transform: scale(1.05); /* Efeito de aumento */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+}
+
+/* Estilo do título do cartão */
+.voluntario-card-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  font-size: 1.25rem; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: #346d51; /* Cor do texto */
+  text-align: center; /* Centralizar texto */
+  margin: 0; /* Sem margem */
+}
+
+/* Estilo do texto do cartão */
+.voluntario-card-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  color: #000000; /* Cor do texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  line-height: 1.4; /* Altura da linha */
+  margin: 0; /* Sem margem */
+  padding: 15px; /* Padding ao redor do texto */
+}
+
+/* Contêiner das ações do cartão */
+.voluntario-card-actions {
+  display: flex; /* Flexbox para layout das ações */
+  justify-content: space-between; /* Espaçar ações */
+  align-items: center; /* Alinhar itens verticalmente */
+  padding: 10px; /* Padding interno */
+  border-top: 1px solid #eee; /* Borda superior */
+  margin-top: 10px; /* Margem superior */
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* BOTÃO NOVO */
+.voluntario-card-icon {
+  font-size: 1.5rem; /* Tamanho dos ícones */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves para hover e click */
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Cor de fundo no hover */
+  border-color: #0056b3; /* Cor da borda no hover */
+  transform: scale(1.05); /* Aumenta levemente o botão no hover */
+  text-decoration: none;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Sombra ao focar no botão */
+}
+
+.btn-primary.mb-3 {
+  margin-bottom: 1rem; /* Margem inferior para espaçamento */
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Estilo principal para garantir que o footer fique no final da página */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Define a altura mínima como a altura da tela */
+}
+
+.content-wrapper {
+  flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+  
+}
+
+/* Estilos para o footer */
+footer {
+  width: 100%; /* Cobre toda a largura da tela */
+
+  background-color: #346d51;
+  color: #f5c909;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+footer .container {
+  padding-top: 15px;
+  
+}
+
+footer .btn-floating {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  color: #daf8e9;
+  background-color: #346d51;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 0 10px;
+}
+
+footer .btn-floating:hover {
+  background-color: #adb5bd;
+  color: #ffffff;
+}
+
+footer .text-center.p-3 {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
+
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Estilos básicos do título */
+.page-title {
+  font-size: 2.5rem; /* Aumenta o tamanho do texto */
+  color: #333; /* Cor do texto */
+  text-align: center; /* Centraliza o título */
+  font-family: 'DynaPuff', sans-serif; /* Fonte estilizada */
+  margin-top: 20px; /* Espaçamento superior */
+  margin-bottom: 30px; /* Espaçamento inferior */
+}
+
+/* Efeitos adicionais */
+.page-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff6b6b; /* Cor de destaque */
+  margin: 10px auto 0; /* Centraliza a linha abaixo do título */
+  border-radius: 2px; /* Arredonda as pontas da linha */
+}
+
+/* Efeito de sombra para um toque mais sofisticado */
+.page-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+

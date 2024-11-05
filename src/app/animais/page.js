@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { FaPlusCircle, FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Pagina from "../components/Pagina";
+import Footer from "../components/Footer";
 
 export default function Page() {
 
@@ -23,10 +24,13 @@ export default function Page() {
   }
 
   return (
-    <Pagina titulo="Animais">
+    <Pagina titulo={<h1 className="page-title">Nossos Pets</h1>} >
 
       <Link href="/animais/form" className="btn btn-primary mb-3">
         <FaPlusCircle /> Novo
+      </Link>
+      <Link href="/interessados/form" className="search-button mb-3" style={{ marginLeft: '15px' }}>
+        <FaPlusCircle /> tenho interesse em adotar
       </Link>
 
       <div className="animal-card-container">
@@ -57,6 +61,7 @@ export default function Page() {
           </div>
         ))}
       </div>
+      <Footer />
     </Pagina>
   )
 }

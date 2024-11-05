@@ -9,6 +9,7 @@ import { Button, Form } from "react-bootstrap";
 import { FaCheck } from "react-icons/fa";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { v4 } from "uuid";
+import Footer from "@/app/components/Footer";
 
 export default function Page({ params }) {
     const route = useRouter();
@@ -189,6 +190,7 @@ export default function Page({ params }) {
                     )}
                 </Formik>
             </div>
+            <Footer />
         </Pagina>
     );
 }
