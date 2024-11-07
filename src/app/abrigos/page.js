@@ -6,6 +6,7 @@ import { FaPlusCircle, FaRegEdit } from "react-icons/fa";
 import Pagina from "../components/Pagina";
 import { MdDelete } from "react-icons/md";
 import Footer from "../components/Footer";
+import MaskedInput from "react-text-mask";
 
 export default function Page() {
 
@@ -38,7 +39,7 @@ export default function Page() {
     }
 
     return (
-        <Pagina titulo={<h1 className="page-title">Nossos Abrigos</h1>} >
+        <Pagina className="page-title" titulo="Nossos Abrigos">
 
             <Link href="/abrigos/form" className="btn btn-primary mb-3">
                 <FaPlusCircle /> Novo
@@ -46,11 +47,11 @@ export default function Page() {
 
             {/* Campo de busca por CEP */}
             <div className="search-container">
-                <input
-                    type="text"
+                <MaskedInput
+                    mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
                     placeholder="Digite seu CEP (XXXXX-XXX)"
                     className="form-control search-input"
-                    maxLength={9}
+                    maxLength={10}
                     value={cepBusca}
                     onChange={(e) => setCepBusca(e.target.value)}
                 />

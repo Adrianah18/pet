@@ -24,8 +24,7 @@ export default function Page() {
   }
 
   return (
-    <Pagina titulo={<h1 className="page-title">Nossos Pets</h1>} >
-
+    <Pagina className="page-title" titulo="Animais">
       <Link href="/animais/form" className="btn btn-primary mb-3">
         <FaPlusCircle /> Novo
       </Link>

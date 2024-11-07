@@ -26,13 +26,13 @@ export default function Page() {
     }
 
     return (
-        <Pagina titulo={<h1 className="page-title">Adoções</h1>} >
-            <Link
-                href="/adocoes/form"
-                className="btn btn-primary mb-3"
-            >
-                <FaPlusCircle /> Novo
-            </Link>
+        <Pagina className="page-title" titulo="Adoções">            
+        <Link
+            href="/adocoes/form"
+            className="btn btn-primary mb-3"
+        >
+            <FaPlusCircle /> Novo
+        </Link>
 
             <Table striped bordered hover>
                 <thead>
@@ -49,7 +49,7 @@ export default function Page() {
                         <tr key={item.id}>
                             <td>
                                 <Link href={`/adocoes/form/${item.id}`}>
-                                    <FaRegEdit title="Editar"       className="voluntario-card-icon text-primary" />
+                                    <FaRegEdit title="Editar" className="voluntario-card-icon text-primary" />
                                 </Link>
                                 <MdDelete
                                     title="Excluir"

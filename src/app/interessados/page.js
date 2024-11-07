@@ -23,8 +23,7 @@ export default function Page() {
   }
 
   return (
-    <Pagina titulo={<h1 className="page-title">Pessoas Interessadas na Adoção</h1>} >
-
+    <Pagina className="page-title" titulo="Pessoas interessadas em Adotar">
       <Link href="/interessados/form" className="btn btn-primary mb-3">
         <FaPlusCircle /> Novo
       </Link>

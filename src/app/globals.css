@@ -327,24 +327,27 @@ img:hover {
   margin-top: -5px; /* Margem superior negativa para aproximar da entrada */
 }
 
-/* Estilo para o grupo de status de adoção */
 .form-group-status {
-  margin-bottom: 20px; /* Margem inferior para separar do próximo campo */
-  margin-top: 15px; /* Margem superior para separar do campo anterior */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Estilo para cada radio button */
-.form-group-status .form-check {
-  display: flex; /* Exibe os radio buttons lado a lado */
-  flex-direction: column; /* Organiza os itens verticalmente */
-  gap: 10px; /* Espaçamento entre cada opção */
-}
-
-/* Alinhamento vertical para o label */
-.form-group-status label {
-  margin-left: 5px; /* Margem para separar o label do input */
+.form-check {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+
+.form-check input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -456,6 +459,13 @@ img:hover {
   color: white; /* Cor do texto */
   padding: 12px; /* Padding */
   border: none;
+}
+
+/* Efeito de hover */
+.search-button:hover {
+  background-color: #138496; /* Cor mais escura para o hover */
+  transform: scale(1.05); /* Aumenta o tamanho em 5% */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -794,3 +804,41 @@ footer .text-center.p-3 {
 }
 
 
+.adoption-process-container {
+  background-color: #f9f9f9; /* Cor de fundo para destacar a seção */
+  padding: 40px 0;
+}
+
+.adoption-process-steps {
+  display: flex;
+  flex-wrap: wrap; /* Para dispositivos menores, os itens irão quebrar para a próxima linha */
+  gap: 20px; /* Espaçamento entre os passos */
+}
+
+.adoption-step {
+  flex: 1; /* Para cada passo ocupar espaço igual dentro da linha */
+  min-width: 220px; /* Largura mínima para garantir responsividade */
+  padding: 20px;
+  background-color: #ffffff; /* Fundo branco para os cards */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.adoption-step .icon {
+  font-size: 50px;
+  color: #FF6B6B;
+  margin-bottom: 10px;
+}
+
+.adoption-step h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.adoption-step p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}

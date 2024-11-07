@@ -10,6 +10,9 @@ import { FaCheck } from "react-icons/fa";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { v4 } from "uuid";
 import Footer from "@/app/components/Footer";
+import { useEffect, useState } from "react";
+import MaskedInput from 'react-text-mask'; // Importando react-text-mask
+
 
 export default function Page({ params }) {
     const route = useRouter();
@@ -18,6 +21,12 @@ export default function Page({ params }) {
     const animais = JSON.parse(localStorage.getItem('animais')) || [];
     const dados = animais.find(item => item.id == params.id);
     const animal = dados || { nome: '', idade: '', especie: '', abrigo: '', sexo: '', peso: '', status_adocao: '', imagem: '' };
+
+    const [abrigos, setAbrigos] = useState([]);
+
+    useEffect(() => {
+        setAbrigos(JSON.parse(localStorage.getItem('abrigos')) || []);
+    }, []);
 
     // Função para salvar dados
     function salvar(dados) {
@@ -45,7 +54,7 @@ export default function Page({ params }) {
     });
 
     return (
-        <Pagina titulo="">
+        <Pagina titulo="Cadastro de Pets">
             <div className="form-container">
                 <h1>Cadastro de Pets</h1>
                 <Formik
@@ -73,16 +82,17 @@ export default function Page({ params }) {
                                 <div className="text-danger">{touched.nome && errors.nome}</div>
                             </Form.Group>
 
+                            {/* Campo de idade com máscara numérica */}
                             <Form.Group className="mb-3" controlId="idade">
                                 <Form.Label>Idade:</Form.Label>
-                                <Form.Control
-                                    type="text"
+                                <MaskedInput
+                                    mask={[/\d/, /\d/]} // Limita a dois dígitos
+                                    className="form-control"
                                     name="idade"
                                     value={values.idade}
                                     onChange={handleChange}
-                                    isInvalid={touched.idade && !!errors.idade}
                                 />
-                                <div className="text-danger">{touched.idade && errors.idade}</div>
+                                {touched.idade && errors.idade && <div className="text-danger">{errors.idade}</div>}
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="especie">
@@ -101,16 +111,23 @@ export default function Page({ params }) {
                                 <div className="text-danger">{touched.especie && errors.especie}</div>
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="abrigo">
+                            <Form.Group className="mb-3" controlId="abrigos">
                                 <Form.Label>Abrigo:</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="abrigo"
-                                    value={values.abrigo}
+                                <Form.Select
+                                    className="custom-select"
+                                    name="abrigos"
+                                    value={values.abrigos}
                                     onChange={handleChange}
-                                    isInvalid={touched.abrigo && !!errors.abrigo}
-                                />
-                                <div className="text-danger">{touched.abrigo && errors.abrigo}</div>
+                                    isInvalid={touched.abrigos && !!errors.abrigos}
+                                >
+                                    <option value=''>Selecione</option>
+                                    {abrigos.map(item => (
+                                        <option key={item.nome} value={item.nome}>
+                                            {item.nome}
+                                        </option>
+                                    ))}
+                                </Form.Select>
+                                <div className="text-danger">{touched.abrigos && errors.abrigos}</div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="sexo">
@@ -129,16 +146,17 @@ export default function Page({ params }) {
                                 <div className="text-danger">{touched.sexo && errors.sexo}</div>
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="peso">
-                                <Form.Label>Peso:</Form.Label>
-                                <Form.Control
-                                    type="text"
+                           {/* Campo de peso com máscara numérica */}
+                           <Form.Group className="mb-3" controlId="peso">
+                                <Form.Label>Peso (em kg):</Form.Label>
+                                <MaskedInput
+                                    mask={[/\d/, /\d/, '.', /\d/]} // Limita para dois dígitos antes do ponto e um após o ponto
+                                    className="form-control"
                                     name="peso"
                                     value={values.peso}
                                     onChange={handleChange}
-                                    isInvalid={touched.peso && !!errors.peso}
                                 />
-                                <div className="text-danger">{touched.peso && errors.peso}</div>
+                                {touched.peso && errors.peso && <div className="text-danger">{errors.peso}</div>}
                             </Form.Group>
 
                             <Form.Group className="mb-3 form-group-status" controlId="status_adocao">

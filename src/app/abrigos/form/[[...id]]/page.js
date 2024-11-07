@@ -2,7 +2,7 @@
 
 import Pagina from "@/app/components/Pagina";
 import { Formik } from "formik";
-import * as Yup from 'yup'; // Importando Yup para validações
+import * as Yup from 'yup';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button, Form } from "react-bootstrap";
@@ -10,16 +10,15 @@ import { FaCheck } from "react-icons/fa";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { v4 } from "uuid";
 import Footer from "@/app/components/Footer";
+import MaskedInput from "react-text-mask";
 
 export default function Page({ params }) {
     const route = useRouter();
 
-    // Lê dados do LocalStorage
     const abrigos = JSON.parse(localStorage.getItem('abrigos')) || [];
     const dados = abrigos.find(item => item.id == params.id);
     const abrigo = dados || { nome: '', endereco: '', cep: '', telefone: '', capacidade: '', site: '', imagem: '' };
 
-    // Função para salvar dados
     function salvar(dados) {
         if (abrigo.id) {
             Object.assign(abrigo, dados);
@@ -32,11 +31,11 @@ export default function Page({ params }) {
         route.push('/abrigos');
     }
 
-    // Definindo o esquema de validação com Yup
     const validationSchema = Yup.object({
         nome: Yup.string().required('Nome é obrigatório'),
         endereco: Yup.string().required('Endereço é obrigatório'),
         cep: Yup.string().required('CEP é obrigatório').matches(/^\d{5}-\d{3}$/, 'CEP inválido (formato XXXXX-XXX)'),
+        telefone: Yup.string().required('Telefone é obrigatório').matches(/^\(\d{2}\) \d{4,5}-\d{4}$/, 'Telefone inválido (formato (XX) XXXXX-XXXX)'),
         capacidade: Yup.number().required('Capacidade é obrigatória').positive('A capacidade deve ser um número positivo').integer('A capacidade deve ser um número inteiro'),
         site: Yup.string().url('O site deve ser uma URL válida'),
         imagem: Yup.mixed().required('Uma imagem é obrigatória')
@@ -57,7 +56,7 @@ export default function Page({ params }) {
                         handleSubmit,
                         errors,
                         touched,
-                        setFieldValue, // Adicionando para manipulação de arquivos
+                        setFieldValue,
                     }) => (
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="nome">
@@ -67,7 +66,7 @@ export default function Page({ params }) {
                                     name="nome"
                                     value={values.nome}
                                     onChange={handleChange}
-                                    isInvalid={touched.nome && !!errors.nome}
+                                    className={touched.nome && errors.nome ? 'is-invalid' : ''}
                                 />
                                 <div className="text-danger">{touched.nome && errors.nome}</div>
                             </Form.Group>
@@ -79,31 +78,31 @@ export default function Page({ params }) {
                                     name="endereco"
                                     value={values.endereco}
                                     onChange={handleChange}
-                                    isInvalid={touched.endereco && !!errors.endereco}
+                                    className={touched.endereco && errors.endereco ? 'is-invalid' : ''}
                                 />
                                 <div className="text-danger">{touched.endereco && errors.endereco}</div>
                             </Form.Group>
-
+                            
                             <Form.Group className="mb-3" controlId="cep">
                                 <Form.Label>CEP:</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="cep"
+                                <MaskedInput
+                                    mask={[/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]}
+                                    className={`form-control ${touched.cep && errors.cep ? 'is-invalid' : ''}`}
                                     value={values.cep}
                                     onChange={handleChange}
-                                    isInvalid={touched.cep && !!errors.cep}
+                                    name="cep"
                                 />
                                 <div className="text-danger">{touched.cep && errors.cep}</div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="telefone">
                                 <Form.Label>Telefone:</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="telefone"
+                                <MaskedInput
+                                    mask={['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                                    className={`form-control ${touched.telefone && errors.telefone ? 'is-invalid' : ''}`}
                                     value={values.telefone}
                                     onChange={handleChange}
-                                    isInvalid={touched.telefone && !!errors.telefone}
+                                    name="telefone"
                                 />
                                 <div className="text-danger">{touched.telefone && errors.telefone}</div>
                             </Form.Group>
@@ -115,20 +114,19 @@ export default function Page({ params }) {
                                     name="capacidade"
                                     value={values.capacidade}
                                     onChange={handleChange}
-                                    isInvalid={touched.capacidade && !!errors.capacidade}
+                                    className={touched.capacidade && errors.capacidade ? 'is-invalid' : ''}
                                 />
                                 <div className="text-danger">{touched.capacidade && errors.capacidade}</div>
                             </Form.Group>
 
-                            {/* Campo de upload de imagem */}
                             <Form.Group className="mb-3" controlId="imagem">
                                 <Form.Label>Imagem do Abrigo:</Form.Label>
                                 <Form.Control
-                                    type="imagem"
+                                    type="text"
                                     name="imagem"
                                     value={values.imagem}
-                                    onChange={handleChange('imagem')}
-                                    isInvalid={touched.imagem && !!errors.imagem}
+                                    onChange={handleChange}
+                                    className={touched.imagem && errors.imagem ? 'is-invalid' : ''}
                                 />
                                 <div className="text-danger">{touched.imagem && errors.imagem}</div>
                             </Form.Group>

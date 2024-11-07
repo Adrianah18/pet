@@ -101,8 +101,8 @@ export default function Page({ params }) {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Prefencias:</Form.Label>
-                <div style={{ display: "inline-flex", gap: "10px" }}>
+                <Form.Label>Preferências:</Form.Label>
+                <div style={{ display: "inline-flex", gap: "15px" }}>
                   <Form.Check
                     type="checkbox"
                     label="Cachorro"
@@ -128,11 +128,13 @@ export default function Page({ params }) {
                     checked={values.preferencias.especie.includes('gato')}
                   />
                 </div>
-                <div className="text-danger">{touched.preferencias && errors.preferencias && errors.preferencias.especie}</div>
+                <div className="text-danger">
+                  {touched.preferencias && errors.preferencias && errors.preferencias.especie}
+                </div>
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <div style={{ display: "inline-flex", gap: "10px", marginTop:"10px" }}>
+                <div style={{ display: "inline-flex", gap: "15px", marginTop: "10px" }}>
                   <Form.Check
                     type="radio"
                     label="Fêmea"
@@ -150,8 +152,8 @@ export default function Page({ params }) {
                     checked={values.preferencias.sexo === 'masculino'}
                   />
                 </div>
-                <div className="text-danger">{touched.preferencias && errors.preferencias && errors.preferencias.sexo}</div>
               </Form.Group>
+
 
               <div className="button-group">
                 <Button type="submit" variant="success">
