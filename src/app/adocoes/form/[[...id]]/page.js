@@ -44,7 +44,7 @@ export default function Page({ params }) {
     
     
     return (
-        <Pagina titulo="Cadastro de Adoções">
+        <Pagina titulo="">
             <div className="form-container">
                 <h1>Cadastro de Adoções</h1>
                 <Formik

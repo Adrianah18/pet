@@ -39,7 +39,7 @@ export default function Page() {
     }
 
     return (
-        <Pagina className="page-title" titulo="Nossos Abrigos">
+        <Pagina className="page-title" titulo="">
 
             <Link href="/abrigos/form" className="btn btn-primary mb-3">
                 <FaPlusCircle /> Novo

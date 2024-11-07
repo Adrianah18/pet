@@ -1,15 +1,23 @@
-body {
-  background-color: #daf8e9; /* Cor de fundo */
+html, body {
+  background-color: #e4fff2; /* Cor de fundo */
   color: #333; /* Cor do texto principal */
   font-family: Arial, sans-serif; /* Fonte do texto */
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 /* Estilos para a navbar */
 .navbar {
-  width: 100%;
+  width: 100%; /* Garantir que ocupe a largura total da tela */
   background-color: #346d51; /* Cor da navbar */
-  padding: 20px;
-  height: 90px;
+  padding: 20px 0; /* Remover padding lateral e ajustar apenas no topo e fundo */
+  height: 120px;
+  box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+  position: relative; /* Navbar não fixa no topo durante a rolagem */
+  top: 0; /* Garante que fique no topo */
+  left: 0; /* Começa na borda esquerda */
+  z-index: 1000; /* Coloca a navbar sobre outros elementos, se necessário */
 }
 
 /* Estilo da logo na navbar */
@@ -21,6 +29,7 @@ body {
   height: 150px;
   transition: transform 0.3s;
   margin-top: -40px;
+  margin-bottom: 50px;
 }
 
 .logo:hover {
@@ -30,12 +39,12 @@ body {
 .navbar-collapse {
   display: flex;
   justify-content: center;
-  margin-top: -60px; /* Ajuste para centralizar */
+  margin-top: -150px; /* Ajuste para centralizar */
 }
 
 .navbar-nav .nav-link {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
-  color: #daf8e9 !important; /* Cor dos links */
+  color: #f6f8da !important; /* Cor dos links */
   font-size: 1.5rem; /* Tamanho da fonte dos links */
   text-decoration: none !important; /* Sem sublinhado */
   transition: color 0.3s ease, background-color 0.3s ease; /* Efeito de transição */
@@ -51,7 +60,6 @@ body {
 /* Estilos para o banner */
 .banner {
   width: 100%;
-  max-width: 1500px;
   height: 350px;
   object-fit: cover;
   margin: 50px auto;
@@ -689,6 +697,7 @@ img:hover {
 .voluntario-card-icon {
   font-size: 1.5rem; /* Tamanho dos ícones */
   cursor: pointer; /* Muda o cursor para indicar que é clicável */
+
 }
 
 .btn-primary {
@@ -699,6 +708,7 @@ img:hover {
   border-radius: 5px; /* Bordas arredondadas */
   transition: background-color 0.3s, transform 0.2s; /* Transições suaves para hover e click */
   text-decoration: none;
+  margin-top: 50px;
 }
 
 .btn-primary:hover {
@@ -732,44 +742,34 @@ img:hover {
 }
 
 /* Estilos para o footer */
+/* Estilos para o footer */
 footer {
-  width: 100%; /* Cobre toda a largura da tela */
-
-  background-color: #346d51;
-  color: #f5c909;
+  width: 100%; /* Garante que ocupe a largura total da tela */
+  background-color: #346d51; /* Cor de fundo */
+  color: #f5c909; /* Cor do texto */
   padding-top: 20px;
-  padding-bottom: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px; /* Maior espaço inferior */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha superior sutil */
   text-align: center;
+  position: relative ; /* Para não ter problemas com o layout se o conteúdo crescer */
+  margin: 0; /* Remove qualquer margem extra */
+  left: 0; /* Garante que o footer comece na borda esquerda */
+  right: 0; /* Garante que o footer se estenda até a borda direita */
+  bottom: 0;
 }
 
-footer .container {
-  padding-top: 15px;
-  
-}
+/* Remover qualquer padding ou margem do container do footer */
+
 
 footer .btn-floating {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   font-size: 24px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
-
   color: #daf8e9;
-  background-color: #346d51;
-  transition: background-color 0.3s, transform 0.3s;
   margin: 0 10px;
 }
 
-footer .btn-floating:hover {
-  background-color: #adb5bd;
-  color: #ffffff;
-}
 
 footer .text-center.p-3 {
-  background-color: rgba(0, 0, 0, 0.05);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fonte dos links */
-
   font-size: 0.9rem;
   margin-top: 10px;
 }

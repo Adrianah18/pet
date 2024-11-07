@@ -54,7 +54,7 @@ export default function Page({ params }) {
     });
 
     return (
-        <Pagina titulo="Cadastro de Pets">
+        <Pagina titulo="">
             <div className="form-container">
                 <h1>Cadastro de Pets</h1>
                 <Formik
@@ -71,8 +71,9 @@ export default function Page({ params }) {
                     }) => (
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="nome">
-                                <Form.Label>Nome:</Form.Label>
+                                <Form.Label>Nome:</Form.Label >
                                 <Form.Control
+                                
                                     type="text"
                                     name="nome"
                                     value={values.nome}

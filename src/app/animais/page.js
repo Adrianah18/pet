@@ -24,7 +24,7 @@ export default function Page() {
   }
 
   return (
-    <Pagina className="page-title" titulo="Animais">
+    <Pagina className="page-title" titulo="">
       <Link href="/animais/form" className="btn btn-primary mb-3">
         <FaPlusCircle /> Novo
       </Link>

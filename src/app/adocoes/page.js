@@ -26,7 +26,7 @@ export default function Page() {
     }
 
     return (
-        <Pagina className="page-title" titulo="Adoções">            
+        <Pagina className="page-title" titulo="">            
         <Link
             href="/adocoes/form"
             className="btn btn-primary mb-3"

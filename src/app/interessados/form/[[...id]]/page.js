@@ -9,6 +9,7 @@ import { FaCheck } from "react-icons/fa";
 import { v4 } from "uuid";
 import Pagina from "@/app/components/Pagina";
 import Footer from "@/app/components/Footer";
+import MaskedInput from "react-text-mask";
 
 export default function Page({ params }) {
   const route = useRouter();
@@ -17,8 +18,10 @@ export default function Page({ params }) {
 
   function salvar(dados) {
     if (interessado.id) {
+      // Atualiza o item existente
       Object.assign(interessado, dados);
     } else {
+      // Gera novo ID somente se não existir
       dados.id = v4();
       interessados.push(dados);
     }
@@ -57,6 +60,7 @@ export default function Page({ params }) {
               <Form.Group className="mb-3" controlId="nome">
                 <Form.Label>Nome Completo:</Form.Label>
                 <Form.Control
+                  placeholder="Nome Completo"
                   type="text"
                   name="nome"
                   value={values.nome}
@@ -68,11 +72,13 @@ export default function Page({ params }) {
 
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>E-mail:</Form.Label>
-                <Form.Control
-                  type="email"
+                <MaskedInput
+                  mask={false} // Desativa a máscara para permitir entrada livre
+                  className="form-control"
                   name="email"
                   value={values.email}
                   onChange={handleChange}
+                  placeholder="exemplo@dominio.com" // Sugestão de formato ao usuário
                   isInvalid={touched.email && !!errors.email}
                 />
                 <div className="text-danger">{touched.email && errors.email}</div>
@@ -80,14 +86,20 @@ export default function Page({ params }) {
 
               <Form.Group className="mb-3" controlId="telefone">
                 <Form.Label>Telefone:</Form.Label>
-                <Form.Control
-                  type="text"
+                <MaskedInput
+                  mask={[
+                    '(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/
+                  ]} // Formato de máscara para (XX) XXXXX-XXXX
+                  className={`form-control ${touched.telefone && errors.telefone ? 'is-invalid' : ''}`} // Adiciona classe is-invalid para exibir erro
                   name="telefone"
+                  placeholder="(XX) XXXXX-XXXX"
+
                   value={values.telefone}
                   onChange={handleChange}
-                  isInvalid={touched.telefone && !!errors.telefone}
                 />
-                <div className="text-danger">{touched.telefone && errors.telefone}</div>
+                {touched.telefone && errors.telefone && (
+                  <div className="invalid-feedback">{errors.telefone}</div> // Exibe a mensagem de erro abaixo
+                )}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="endereco">
